@@ -5,6 +5,7 @@ import { CustomMaterialModule } from '@app/material';
 
 import { ComponentsModule } from './components';
 import { BooksPageComponent } from './components/books-page.component';
+import { AuthGuard } from '@app/auth/services/auth.guard';
 
 /* NgRx */
 import { StoreModule } from '@ngrx/store';
@@ -18,7 +19,7 @@ import { BooksPageEffects } from './effects/books-page.effects';
     CustomMaterialModule,
     ComponentsModule,
     RouterModule.forChild([
-      { path: '', component: BooksPageComponent },
+      { path: '', component: BooksPageComponent, canActivate: [AuthGuard] },
     ]),
     StoreModule.forFeature('books', reducers),
     EffectsModule.forFeature([BooksPageEffects]),

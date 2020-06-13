@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Logout } from '@app/auth/actions/auth.actions';
 
 import * as BooksPageActions from '../actions/books-page.actions';
 import { Book } from '../models/book';
@@ -12,6 +13,9 @@ import * as fromBooks from '../reducers';
   template: `
     <mat-card>
       <mat-card-title>My Collection</mat-card-title>
+      <mat-card-actions>
+        <button mat-button raised color="accent" (click)="logout()">Logout</button>
+      </mat-card-actions>
     </mat-card>
 
     <abl-book-preview-list [books]="books$ | async"></abl-book-preview-list>
@@ -39,5 +43,9 @@ export class BooksPageComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new BooksPageActions.Load());
+  }
+
+  logout() {
+    this.store.dispatch(new Logout());
   }
 }

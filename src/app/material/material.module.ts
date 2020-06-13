@@ -1,25 +1,3 @@
-//#region Copyright
-
-/*****************************************************************************************
-*                                     ______________________________________________     *
-*                              o O   |                                              |    *
-*                     (((((  o      <          SUBMISSION AND LICENSING TOOL        |    *
-*                    ( o o )         |______________________________________________|    *
-* ------------oOOO-----(_)-----OOOo---------------- salt.novomatic.com ----------------- *
-*                Name: custom-material.module.ts                                         *
-*              Author: Stanley Omoregie                                                  *
-*     Completion date: 16.01.2020                                                        *
-*       Modified date: 17.01.2020                                                        *
-*    Last Modified By: Stanley Omoregie                                                  *
-*           CopyRight: ©2020 Novomatic AG.                                               *
-*                  .oooO  Oooo.                                                          *
-*                  (   )  (   )                                                          *
-* ------------------\ (----) /---------------------------------------------------------- *
-*                    \_)  (_/                                                            *
-*****************************************************************************************/
-
-//#endregion Copyright
-
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DragDropModule } from '@angular/cdk/drag-drop'

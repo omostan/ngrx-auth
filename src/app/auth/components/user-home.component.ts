@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import * as fromStore from '@app/state';
+import { Logout } from '@app/auth/actions/auth.actions';
 
 @Component({
   selector: 'abl-user-home',
@@ -7,6 +10,7 @@ import { Router } from '@angular/router';
     <div>
       <h3>Welcome home!</h3>
       <button mat-button raised color="accent" (click)="goToBooks()">See my book collection</button>
+      <button mat-button raised color="accent" (click)="logout()">Log Out</button>
     </div>
   `,
   styles: [
@@ -28,10 +32,14 @@ import { Router } from '@angular/router';
 })
 export class UserHomeComponent {
 
-  constructor(private router: Router) { }
+  constructor(private store: Store<fromStore.State>, private router: Router) { }
 
   goToBooks() {
     this.router.navigate(['/books']);
+  }
+
+  logout() {
+    this.store.dispatch(new Logout());
   }
 
 }
