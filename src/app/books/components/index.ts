@@ -9,7 +9,7 @@ import { BookPreviewComponent } from './book-preview.component';
 import { BookPreviewListComponent } from './book-preview-list.component';
 
 import { PipesModule } from '../../shared/pipes';
-import { MaterialModule } from '../../material';
+import { CustomMaterialModule } from '../../material';
 import { BooksPageComponent } from './books-page.component';
 
 export const COMPONENTS = [
@@ -24,7 +24,7 @@ export const COMPONENTS = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialModule,
+    CustomMaterialModule,
     RouterModule,
     PipesModule,
   ],

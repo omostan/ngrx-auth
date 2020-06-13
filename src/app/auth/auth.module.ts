@@ -3,17 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { UserHomeComponent } from './components/user-home.component';
-import { MatButtonModule, MatCardModule, MatDialogModule, MatInputModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomMaterialModule } from '@app/material';
 
 @NgModule({
   imports: [
     CommonModule,
     AuthRoutingModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule,
-    MatInputModule,
+    CustomMaterialModule,
     ReactiveFormsModule,
   ],
   declarations: [UserHomeComponent]

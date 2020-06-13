@@ -1,36 +1,156 @@
-import { NgModule } from '@angular/core';
+//#region Copyright
 
-import {
-  MatInputModule,
-  MatCardModule,
-  MatButtonModule,
-  MatSidenavModule,
-  MatListModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatProgressSpinnerModule,
-} from '@angular/material';
+/*****************************************************************************************
+*                                     ______________________________________________     *
+*                              o O   |                                              |    *
+*                     (((((  o      <          SUBMISSION AND LICENSING TOOL        |    *
+*                    ( o o )         |______________________________________________|    *
+* ------------oOOO-----(_)-----OOOo---------------- salt.novomatic.com ----------------- *
+*                Name: custom-material.module.ts                                         *
+*              Author: Stanley Omoregie                                                  *
+*     Completion date: 16.01.2020                                                        *
+*       Modified date: 17.01.2020                                                        *
+*    Last Modified By: Stanley Omoregie                                                  *
+*           CopyRight: ©2020 Novomatic AG.                                               *
+*                  .oooO  Oooo.                                                          *
+*                  (   )  (   )                                                          *
+* ------------------\ (----) /---------------------------------------------------------- *
+*                    \_)  (_/                                                            *
+*****************************************************************************************/
+
+//#endregion Copyright
+
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DragDropModule } from '@angular/cdk/drag-drop'
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule, MAT_CHECKBOX_DEFAULT_OPTIONS } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTreeModule } from '@angular/material/tree';
+
+
 
 @NgModule({
+  declarations: [],
   imports: [
-    MatInputModule,
-    MatCardModule,
+    CommonModule,
+    DragDropModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
     MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatGridListModule,
     MatIconModule,
-    MatToolbarModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    MatNativeDateModule
   ],
   exports: [
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatProgressSpinnerModule,
+      MatAutocompleteModule,
+      MatBadgeModule,
+      MatButtonModule,
+      MatButtonToggleModule,
+      MatCardModule,
+      MatCheckboxModule,
+      MatChipsModule,
+      MatStepperModule,
+      MatDatepickerModule,
+      MatDialogModule,
+      MatExpansionModule,
+      MatFormFieldModule,
+      MatGridListModule,
+      MatIconModule,
+      MatInputModule,
+      MatListModule,
+      MatMenuModule,
+      MatPaginatorModule,
+      MatProgressBarModule,
+      MatProgressSpinnerModule,
+      MatRadioModule,
+      MatRippleModule,
+      MatSelectModule,
+      MatSidenavModule,
+      MatSliderModule,
+      MatSlideToggleModule,
+      MatSnackBarModule,
+      MatSortModule,
+      MatTableModule,
+      MatTabsModule,
+      MatToolbarModule,
+      MatTooltipModule,
+      MatTreeModule,
+      MatNativeDateModule
   ],
+  providers: [
+    {provide: MAT_CHECKBOX_DEFAULT_OPTIONS, useValue: 'check'},
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {float: 'always'}}
+  ]
 })
-export class MaterialModule {}
+export class CustomMaterialModule {
+  constructor(public matIconRegistry: MatIconRegistry) {
+      // matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
+  }
+
+  static forRoot(): ModuleWithProviders {
+      return {
+          ngModule: CustomMaterialModule,
+          providers: [MatIconRegistry]
+      };
+  }
+}
